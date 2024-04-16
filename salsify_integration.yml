@@ -1,0 +1,5 @@
+name: 'Salsify Integration'
+description: 'Salsify Integration to sync the product from salsify.'
+type: module
+package: Web services
+core_version_requirement: '^9 || ^10'

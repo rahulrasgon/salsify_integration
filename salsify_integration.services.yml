@@ -1,0 +1,20 @@
+services:
+  salsify_integration.webhook_service:
+    class: 'Drupal\salsify_integration\Helpers\WebhookService'
+    arguments: [
+      '@logger.factory',
+      '@http_client',
+      '@config.factory',
+    ]
+
+  salsify_integration.salsify_service:
+    class: 'Drupal\salsify_integration\Salsify'
+    arguments: [
+      '@logger.factory',
+      '@config.factory',
+      '@entity_type.manager',
+      '@http_client',
+      '@entity_field.manager',
+      '@queue',
+      '@cache.default',
+    ]

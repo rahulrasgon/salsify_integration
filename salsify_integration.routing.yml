@@ -1,0 +1,23 @@
+salsify_integration.listener:
+  path: '/salsify-webhook/listener'
+  defaults:
+    _controller: '\Drupal\salsify_integration\Controller\SalsifyController::listener'
+    _title: 'Webhook notification listener'
+  requirements:
+    _custom_access: '\Drupal\salsify_integration\Controller\SalsifyController::access'
+
+salsify_integration.configuration:
+  path: '/admin/config/services/salsify'
+  defaults:
+    _form: 'Drupal\salsify_integration\Form\ConfigForm'
+    _title: 'Salsify Integration'
+  requirements:
+    _permission: 'administer site configuration'
+
+salsify_integration.mapping:
+  path: '/admin/config/services/salsify/mapping'
+  defaults:
+    _form: 'Drupal\salsify_integration\Form\EntityMappingConfigForm'
+    _title: 'Field Mapping'
+  requirements:
+    _permission: 'administer site configuration'
